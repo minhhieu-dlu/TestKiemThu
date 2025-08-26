@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  body{ @apply text-gray-800; }
+}
+
+.btn{
+  @apply px-4 py-2 rounded-2xl bg-brand text-white hover:bg-brand-dark transition;
+}
+.btn-ghost{
+  @apply px-4 py-2 rounded-2xl border hover:border-brand hover:text-brand transition;
+}
+.card{
+  @apply bg-white rounded-2xl shadow-sm hover:shadow-lg transition p-4;
+}
+
+@keyframes fadeInUp{
+  from{ opacity:0; transform: translateY(8px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+.fade-in-up{ animation: fadeInUp .4s ease-out both; }
+
+@keyframes shimmer{
+  0%{ background-position: -200% 0; }
+  100%{ background-position: 200% 0; }
+}
+.skeleton{
+  background: linear-gradient(90deg,#eee 25%,#f7f7f7 37%,#eee 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.badge{
+  @apply px-2 py-0.5 text-xs rounded-full bg-gray-100 border text-gray-600;
+}
